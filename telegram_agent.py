@@ -199,7 +199,7 @@ def analyze_chat_with_deepseek(messages: list[dict]) -> list[dict]:
 {chat_text}"""
 
     response = deepseek.chat.completions.create(
-        model="deepseek-chat",
+        model="deepseek-v4-flash",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.1,  # низкая температура = более предсказуемый JSON
         max_tokens=2000,
