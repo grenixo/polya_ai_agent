@@ -21,36 +21,43 @@ tg-agent/
 
 ---
 
-## 🚀 Первый запуск
+## 🚀 Первый деплой на сервер
 
-### 1. Клонируй репозиторий
+### 1. Установи Docker (если ещё нет)
 
 ```bash
-git clone https://github.com/ВАШ_ЮЗЕР/tg-agent.git
-cd tg-agent
+curl -fsSL https://get.docker.com | sh
 ```
 
-### 2. Создай .env с секретами
+### 2. Клонируй репозиторий
+
+```bash
+git clone https://github.com/grenixo/polya_ai_agent.git
+cd polya_ai_agent
+```
+
+### 3. Создай .env с секретами
 
 ```bash
 cp .env.example .env
 nano .env   # заполни все значения
 ```
 
-### 3. Положи service_account.json
+### 4. Скопируй service_account.json на сервер
+
+С локальной машины:
 
 ```bash
-# Скопируй файл на сервер (с локальной машины):
-scp service_account.json user@server:~/tg-agent/
+scp service_account.json user@server:~/polya_ai_agent/
 ```
 
-### 4. Запусти
+### 5. Запусти
 
 ```bash
 docker compose up --build -d
 ```
 
-### 5. Проверь логи
+### 6. Проверь логи
 
 ```bash
 docker compose logs -f
