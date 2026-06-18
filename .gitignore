@@ -1,0 +1,18 @@
+# Секреты — никогда не коммитить!
+.env
+service_account.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# Логи
+*.log
+logs/
+
+# OS
+.DS_Store
