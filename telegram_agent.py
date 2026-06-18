@@ -368,7 +368,7 @@ async def run_analysis(update: Update, context: ContextTypes.DEFAULT_TYPE):
 def main():
     app = Application.builder().token(TELEGRAM_TOKEN).build()
 
-    chat_filter = filters.Chat(chat_ids=ALLOWED_CHAT_IDS) if ALLOWED_CHAT_IDS else filters.ALL
+    chat_filter = filters.Chat(chat_id=ALLOWED_CHAT_IDS) if ALLOWED_CHAT_IDS else filters.ALL
 
     app.add_handler(CommandHandler("analyze", cmd_analyze, filters=chat_filter))
     app.add_handler(CommandHandler("status", cmd_status, filters=chat_filter))
